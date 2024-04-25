@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+    <h1 id="counter1">0</h1>
+    <h1 id="counter2">0</h1>
+    <script>
+        var counter1 = document.getElementById('counter1');
+        var counter2 = document.getElementById('counter2');
+
+        function increment(i, max, element){
+            if(i > max) return;
+            setTimeout(function(){
+                element.innerText = Math.round(i);
+                increment(i+(max/100), max, element);
+            },10)
+        }
+
+        increment(0,198053, counter1 );
+        increment(0,999, counter2 );
+    </script>
+</body>
+</html>
